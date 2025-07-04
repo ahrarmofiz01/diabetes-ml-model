@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+  <div class="card shadow-lg p-5 text-center" style="width: 600px;">
+    <h3 class="text-info mb-3">🧾 Prediction Result</h3>
+
+    {% if prediction == 1 %}
+      <h2 class="text-danger">⚠️ You are likely to have Diabetes.</h2>
+      <div class="alert alert-warning mt-4 text-start">
+        <h5>🩺 Health Tips:</h5>
+        <ul>
+          <li>Visit your doctor immediately.</li>
+          <li>Reduce sugar and carb intake.</li>
+          <li>Walk 30–60 mins daily.</li>
+        </ul>
+      </div>
+    {% else %}
+      <h2 class="text-success">✅ You are NOT likely to have Diabetes.</h2>
+      <div class="alert alert-success mt-4 text-start">
+        <h5>💡 Health Maintenance Tips:</h5>
+        <ul>
+          <li>Maintain a balanced diet.</li>
+          <li>Exercise at least 5 days/week.</li>
+          <li>Avoid excessive sugar & salt.</li>
+        </ul>
+      </div>
+    {% endif %}
+
+    <!-- Show the graph -->
+    {% if graph %}
+      <div class="mt-5">
+        <h4 class="text-primary">📊 Your Health Graph</h4>
+        <img src="{{ url_for('static', filename=graph) }}" class="img-fluid mt-3 border rounded shadow">
+      </div>
+    {% endif %}
+
+    <a href="/" class="btn btn-secondary mt-4">🔁 Check Again</a>
+  </div>
+</div>
+{% endblock %}

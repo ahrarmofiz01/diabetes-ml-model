@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+  <!-- Form Card -->
+  <div class="card shadow p-4 mb-4 bg-white rounded">
+    <h2 class="text-center text-primary mb-4">🧪 Enter Your Details</h2>
+    <form action="/predict" method="POST">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input type="number" name="Pregnancies" placeholder="Pregnancies" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="Glucose" placeholder="Glucose Level (mg/dL)" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="BloodPressure" placeholder="Blood Pressure (mm Hg)" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="SkinThickness" placeholder="Skin Thickness (mm)" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="Insulin" placeholder="Insulin (mu U/ml)" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="BMI" placeholder="BMI (kg/m²)" step="any" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="DiabetesPedigreeFunction" placeholder="DPF" step="any" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="Age" placeholder="Age (years)" class="form-control" required>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success px-5 py-2">Predict</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Notes Section -->
+  <div class="card bg-light border-info p-4">
+    <h4 class="text-info">📘 How to Measure Each Input:</h4>
+    <ul>
+      <li><strong>Glucose:</strong> Measure using glucometer after fasting.</li>
+      <li><strong>Blood Pressure:</strong> Use digital BP machine.</li>
+      <li><strong>BMI:</strong> Formula → BMI = weight (kg) / height² (m²).</li>
+      <li><strong>Insulin:</strong> Lab blood test result (fasting insulin).</li>
+      <li><strong>Skin Thickness:</strong> Estimate using calipers (10–40 mm typical).</li>
+      <li><strong>DPF:</strong> Family diabetes history value (0.1 – 2.5). Put 0.5 if unsure.</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock %}

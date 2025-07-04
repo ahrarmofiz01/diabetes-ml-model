@@ -1,0 +1,15 @@
+body {
+  background: linear-gradient(to right, #4694b6, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1;
+}
+
+footer {
+  margin-top: 300px
+}
